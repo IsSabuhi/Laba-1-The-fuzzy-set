@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+      integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+      crossorigin="anonymous"
+    ></script>
+  
+    <title>Лабораторная работа 1</title>
+</head>
+<body onload="Graph()">
+
+  <header> 
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn dropbtn1">Кнопки</button>
+      <div id="myDropdown" class="dropdown-content"> 
+         <!-- Кнопки -->
+        <div class="Changebutton">
+          <button onclick="Change()" class="dropbtn dropbtn2">Заполнить</button>
+        </div>
+        <div class="Changebutton">
+          <button onclick="Func()" class="dropbtn dropbtn3">Построить</button>
+        </div>
+        <div class="Changebutton">
+          <button onclick="Kill()" class="dropbtn dropbtn4">Сбросить</button>
+        </div>
+        <div class="Changebutton">
+          <button onclick="Check()" class="dropbtn dropbtn5">Проверить</button>
+        </div>
+        <div class="Changebutton">
+          <button onclick="Srez()" class="dropbtn dropbtn6">Рассчитать</button>
+        </div>
+        <div class="Changebutton">
+        <button onclick="Index()" class="dropbtn dropbtn7">Расчитать индексы</button>
+      </div>
+
+      </div>
+    </div>
+    <h1 align="center">Лабораторная работа №1 по нечеткой логике</h1>
+
+  </header>
+
+<div class="table">
+    <table border="0">
+      <tr>
+        <th>Показатели</th>
+        <th>Производительность по кирпичу,<br> шт/ч</th>
+        <th>Производительность по массе,<br> т/ч</th>
+        <th>A</th>
+        <th>B</th>
+      </tr>
+      <tr>
+        <td><input value="СМК-443" id="Name1" class="tdInput" /></td>
+        <td><input value="5000" id="isA1" class="TdZnac" /></td>
+        <td><input value="20" id="isB1" class="TdZnac"/></td>
+        <td><input value="" readonly id="a1" class="TdZnac"/></td>
+        <td><input value="" readonly id="b1" class="TdZnac"/></td>
+      </tr>
+      <tr>
+        <td><input value="СМК-28А" id="Name2" class="tdInput"/></td>
+        <td><input value="7000" id="isA2" class="TdZnac"/></td>
+        <td><input value="28" id="isB2" class="TdZnac"/></td>
+        <td><input value="" readonly id="a2" class="TdZnac"/></td>
+        <td><input value="" readonly id="b2" class="TdZnac"/></td>
+      </tr>
+      <tr>
+        <td><input value="СМК-133" id="Name3" class="tdInput"/></td>
+        <td><input value="7000" id="isA3" class="TdZnac"/></td>
+        <td><input value="28" id="isB3" class="TdZnac"/></td>
+        <td><input value="" readonly id="a3" class="TdZnac"/></td>
+        <td><input value="" readonly id="b3" class="TdZnac"/></td>
+      </tr>
+      <tr>
+        <td><input value=" СМК-168" id="Name4" class="tdInput"/></td>
+        <td><input value="10000" id="isA4" class="TdZnac"/></td>
+        <td><input value="40" id="isB4" class="TdZnac"/></td>
+        <td><input value="" readonly id="a4" class="TdZnac"/></td>
+        <td><input value="" readonly id="b4" class="TdZnac"/></td>
+      </tr>
+      <tr>
+        <td><input value="MVC/620" id="Name5" class="tdInput"/></td>
+        <td><input value="24000" id="isA5" class="TdZnac"/></td>
+        <td><input value="100" id="isB5" class="TdZnac"/></td>
+        <td><input value="" readonly id="a5" class="TdZnac"/></td>
+        <td><input value="" readonly id="b5" class="TdZnac"/></td>
+      </tr>
+    </table>
+  </div>
+
+    <div class="wrap">
+      <div class="inputs">
+        <ul>
+          <li>
+            Линейный индекс нечёткости множества A :<input value="" id="in1" readonly />
+          </li>
+          <li>
+            Линейный индекс нечёткости множества B :<input value="" id="in2" readonly />
+          </li>
+          <li>
+            Квадратичный индекс нечёткости множества A :<input value="" readonly id="in3" />
+          </li>
+          <li>
+            Квадратичный индекс нечёткости множества B :<input  value="" readonly id="in4" />
+          </li>
+          <li>
+            Индекс нечёткости Егера множества A (p = 1) :<input value="" readonly id="in5" />
+          </li>
+          <li>
+            Индекс нечёткости Егера множества B (p = 1) :<input value="" readonly id="in6" />
+          </li>
+          <li>
+            Индекс нечёткости Егера множества A (p = 2) :<input value="" readonly id="in7" />
+          </li>
+          <li>
+            Индекс нечёткости Егера множества B (p = 2) :<input value="" readonly id="in8" />
+          </li>
+          <li>
+            Индекс нечёткости Коско множества A :<input value="" readonly id="in9" />
+          </li>
+          <li>
+            Индекс нечёткости Коско множества B :<input value="" readonly id="in10" />
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="alpha">
+      Введите α срез: <input value = "" id="srez" /> 
+    </div>
+  
+
+    <div class="demo "> 
+      <input type="checkbox" id="hd-1" class="hide" />
+      <label for="hd-1" >Функция</label>
+      <div>
+        <form>
+      <p>
+        <input name="func" type="radio" value="graph" id="f1" checked/>Графики множеств </p>
+      <p><input name="func" type="radio" value="ob" id="f2" />Объединение</p>
+      <p><input name="func" type="radio" value="pe" id="f3" />Пересечение</p>
+      <p>
+        <input name="func" type="radio" value="raznA" id="f4" />Разность A и B
+      </p>
+      <p>
+        <input name="func" type="radio" value="raznB" id="f5" />Разность B и A
+      </p>
+      <p>
+        <input name="func" type="radio" value="dopA" id="f6" />Дополнение A
+      </p>
+      <p>
+        <input name="func" type="radio" value="dopB" id="f7" />Дополнение B
+      </p>
+      </form>
+    </div>
+
+      <!--Форма с полями Функция и Проверка -->
+    <input type="checkbox" id="hd-2" class="hidee"  />
+  <label for="hd-2" >Проверка</label>
+  <div>
+<form class="check">
+  <p>
+    <input name="func" type="radio" value="AvB" id="p1" checked/>A содержится в B
+  </p>
+  <p>
+    <input name="func" type="radio" value="BvA" id="p2" />B содержится в A
+  </p>
+  <p><input name="func" type="radio" value="ArB" id="p3" />A и B равны</p>
+</form>
+</div>
+
+</div>
+
+<br>
+<br>
+
+    <div class="chart">
+      <canvas id="speedChart" style="display: block; height: 650px; width: 1490px;" ></canvas>
+    </div>
+
+    <script src="Script.js"></script>
+</body>
+</html>

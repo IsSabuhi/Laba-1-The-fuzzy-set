@@ -1,0 +1,287 @@
+header {
+  display: block;
+  width: 100%;
+  height: 50px;
+}
+.chart {
+  display: block;
+  position: absolute;
+  height: 400 px;
+  width: 1490px;
+  top: 455px;
+}
+.GraphTable {
+  top: 10px;
+}
+.table1 {
+  display: table;
+}
+footer {
+position: fixed; /* Фиксированное положение */
+left: 0; bottom: 0; /* Левый нижний угол */
+padding: 10px;
+}
+
+.check {
+  display: inline-table;
+  width: 180px;
+  top: -25px;
+  left: 110px;
+  position: absolute;
+}
+.alpha {
+  position: relative;
+  top: 25px;
+  left: 480px;
+  font-size: 15px;
+}
+
+.table {
+  display: table;
+  font-family: cursive;
+  width: min-content;
+  margin: 1px 1px;
+  }
+th, td:first-child {
+background: #84aacc;
+color: rgb(255, 255, 255);
+padding: 10px 20px;
+border-radius: 10px;
+}
+th, td {
+border-style: solid;
+border-width: 0 1px 1px 0;
+border-color: rgb(0, 0, 0);
+}
+td {
+background: #D8E6F3;
+border-radius: 5px;
+}
+th:first-child, td:first-child {
+text-align: left;
+border-radius: 15px;
+}
+td :hover { background-color: #ffffff; }
+
+.tdInput {
+  background: #84aacc;
+  border: 0px ;
+  color: rgb(0, 0, 0);
+}
+.TdZnac {
+  color: rgb(0, 0, 0);
+  background: #D8E6F3;
+  border: 0px;
+}
+.Changebutton button {
+    margin: 0 20px;
+    padding: 10px 15px;
+    overflow: hidden;
+    font-family: 'Montserrat Alternates', sans-serif;
+    letter-spacing: 3px;
+    text-transform: none;
+    font-weight: 400;
+    border-width: 0px;
+    transform: matrix3d(1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 5, 1, 0, 1);
+    outline: none;
+    cursor: pointer;
+}
+ 
+  /* Кнопка раскрывающегося списка */
+.dropbtn {
+  margin: 0px 20px;
+  padding: 10px 22px;
+  overflow: hidden;
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: white;
+  background-color: white;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-width: 2px;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -9, -1, 0, 1);
+  outline: double;
+  cursor: pointer;
+  border-radius: 19px;
+  background: none;
+  width: 135px;
+}
+.dropbtn1 {
+  background: linear-gradient(90deg, #f500dc, #6e0efd);
+  width: 160px;
+}
+.dropbtn2 {
+  background: linear-gradient(90deg, #f500dc, #6a27d2);
+}
+.dropbtn3 {
+  background: linear-gradient(90deg, #f500dc, #cf4975);
+}
+.dropbtn4 {
+  background: linear-gradient(90deg, #f500dc, #934dfc);
+}
+.dropbtn5 {
+  background: linear-gradient(90deg, #f500dc, #c39bff);
+}
+.dropbtn6 {
+  background: linear-gradient(90deg, #f500dc, hsl(199, 78%, 64%));
+}
+.dropbtn7 {
+  background: linear-gradient(90deg, #f500dc, #fff781);
+}
+.dropbtn8 {
+  background: linear-gradient(90deg, #a0a0a0, #7e7e7c);
+}
+
+.dropbtn:before, .dropbtn:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  left: -110%;
+  top: 0;
+  opacity: 0.1;
+  background: black;
+  transform: skewX(25deg);
+  transition: .5s ease;
+}
+
+/*Кнопка раскрывающегося списка при наведении и фокусе */
+.dropbtn:hover:before, .dropbtn:focus {
+  left: -10%;
+  transition: .3s ease;
+}
+
+.dropbtn:hover:after {
+  left: -20%;
+}
+.dropdown1 {
+  cursor: pointer;
+  position: fixed;
+  
+}
+/* Контейнер <div> - необходим для размещения раскрывающегося содержимого */
+.dropdown {
+ 
+  cursor: pointer;
+  position: fixed;
+  top:5px; 
+  right: 5px; 
+  z-index: 2;    
+}
+
+/* Выпадающее содержимое (по умолчанию скрыто) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: none;
+  min-width: 160px;
+  z-index: 1;
+}
+/* Показать раскрывающееся меню  */
+.show {display:block;}
+
+.func {
+  display: inherit;
+  position: relative;
+  float: right;
+  margin: 386px;
+  top: -714px;
+}
+
+/* скрываем чекбоксы и блоки с содержанием */
+.hide {
+  display: none; 
+}
+.hide + label ~ div{
+  display: none;
+}
+/* оформляем текст label */
+.hide + label {
+  border-bottom: 2px groove rgb(0, 0, 0);
+  padding: 0;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  
+}
+
+/* вид текста label при активном переключателе */
+.hide:checked + label {
+  color: rgb(0, 0, 0);
+  border-bottom: 0;
+}
+/* когда чекбокс активен показываем блоки с содержанием  */
+.hide:checked + label + div {
+  display: flex; 
+  background: #ffffff;
+  -moz-box-shadow: inset 1px 1px 5px #ffffff;
+  -webkit-box-shadow: inset 1px 1px 5px #ffffff;
+  box-shadow: inset 0px 0px 0px #ffffff;
+
+}
+
+/* скрываем чекбоксы и блоки с содержанием */
+.hidee {
+  display: none; 
+}
+.hidee + label ~ div{
+  display: none;
+}
+/* оформляем текст label */
+.hidee + label {
+  border-bottom: 2px groove rgb(0, 0, 0);
+    padding: 0;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    display: inherit;
+    left: 120px;
+    top: -0.5px;
+    position: inherit;
+}
+
+/* вид текста label при активном переключателе */
+.hidee:checked + label {
+  color: rgb(0, 0, 0);
+  border-bottom: 0;
+}
+/* когда чекбокс активен показываем блоки с содержанием  */
+.hidee:checked + label + div {
+  display: flex; 
+  background: #ffffff;
+  -moz-box-shadow: inset 1px 1px 5px #ffffff;
+  -webkit-box-shadow: inset 1px 1px 5px #ffffff;
+  box-shadow: inset 0px 0px 0px #ffffff;
+  padding: 10px; 
+  top: 47px;
+  left: 8px;
+  position: absolute;
+}
+
+/* demo контейнер */
+.demo {
+  margin: 5% 10%;
+    max-width: 1024px;
+    padding: 0 20px;
+    display: block;
+    top: 325px;
+    left: -150px;
+    position: absolute;
+/*background-color: rgb(169, 111, 255); */
+    z-index: 2;
+}
+
+.wrap {
+  position: absolute;
+  top: 60px;
+  right: 130px;
+  z-index: -1;
+}
+
+.inputs input {
+  width: 55px;
+  margin-left: 10px;
+}
+
+.inputs li {
+  line-height: 32px;
+}
